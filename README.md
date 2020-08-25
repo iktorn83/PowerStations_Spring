@@ -10,11 +10,11 @@ data security.
 
 # Screenshots
 No user authenticated<br>
-<img src="/screenshots/1.png"  width="250" height="350"><br>  
+<img src="/screenshots/1.png"  width="800" height="600"><br>  
 Normal user logged<br>
-<img src="/screenshots/2.png"  width="250" height="350"><br>  
+<img src="/screenshots/2.png"  width="800" height="600"><br>  
 Superuser loggedr<br>
-<img src="/screenshots/3.png"  width="250" height="350"><br>
+<img src="/screenshots/3.png"  width="800" height="600"><br>
 
 # DONE
 -REST API<br>
