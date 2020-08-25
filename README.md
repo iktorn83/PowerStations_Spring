@@ -8,16 +8,25 @@ graphics forms. Due to security reasons there are two data sources in use - one 
 about power plants and the other as a credentials database. Spring Security version 5 is responsible for 
 data security.
 
+# Screenshots
+No user authenticated<br>
+<img src="/screenshots/1.png"  width="250" height="350"><br>  
+Normal user logged<br>
+<img src="/screenshots/2.png"  width="250" height="350"><br>  
+Superuser loggedr<br>
+<img src="/screenshots/3.png"  width="250" height="350"><br>
+
 # DONE
--REST API
--WEB Controller
--Thymeleaf Frontend
--Spring Security - roles, users, secured pages
+-REST API<br>
+-WEB Controller<br>
+-Thymeleaf Frontend<br>
+-Spring Security - roles, users, secured pages<br>
+-Tests<br>
 
 # TO-DO
--Authentication by DB credentials
--Add-Event case in WEB Controller
--Analyze Module
+-Authentication by DB credentials<br>
+-Add-Event case in WEB Controller<br>
+-Analyze Module<br>
 
 # Tools
 -Java<br>
@@ -25,3 +34,4 @@ data security.
 -Thymeleaf<br>
 -Spring Security<br>
 -HSQL<br>
+-
