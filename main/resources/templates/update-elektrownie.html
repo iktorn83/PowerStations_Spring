@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org" th:charset="UTF-8" lang="pl">
+
+<head>
+    <title>Elektrownie</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Lista elektrowni</h1>
+
+    <form th:action="@{/web/elektrownie/updateElektrownie}" th:object="${elektrownia}" method="post">
+        <input type="text" name="id" th:value="*{id}"
+               th:hidden="true" class="form-control mb-4 col-4">
+        <input type="text" name="nazwaElektrowni" th:value="*{nazwaElektrowni}" placeholder="Podaj nazwę!"
+               class="form-control mb-4 col-4">
+        <input type="number" name="mocElektrowni" th:value="*{mocElektrowni}" placeholder="Podaj moc!"
+               class="form-control mb-4 col-4">
+        <button type="submit" class="btn btn-info col-2">Zapisz</button>
+    </form>
+
+
+</div>
+</body>
+</html>

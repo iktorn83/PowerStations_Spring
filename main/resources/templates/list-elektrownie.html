@@ -1,0 +1,81 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="pl">
+
+<head>
+    <title>Elektrownie</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <br/>
+    <h1 class="float-left">Lista elektrowni</h1>
+    <div class="float-right text-center">
+        <a class="mx-auto  btn btn-danger" sec:authorize="isAuthenticated()" th:href="@{/logout}">Wyloguj</a>
+        <a class="mx-auto  btn btn-info" sec:authorize="!isAuthenticated()" th:href="@{/login}">Zaloguj się</a>
+        <div sec:authorize="isAuthenticated()">
+            Zalogowano
+            <span sec:authorize="hasRole('USER')">
+                użytkownika:
+            </span>
+            <span sec:authorize="hasRole('ADMIN')">
+                administratora:
+            </span>
+            <span  sec:authentication="name">Name</span>
+        </div>
+    </div>
+
+
+    <div th:class="html-editor-align-center" class="row col-md-7 table-responsive">
+        <table id="customerTable" class="table table-bordered table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nazwa</th>
+                <th>Moc (mW)</th>
+                <th>Awarie</th>
+                <th sec:authorize="hasRole('ADMIN')">Opcje</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:style="${tempElektrownia.zdarzenia.isEmpty() == true} ? 'color: green' : 'color: red'"
+                th:each="tempElektrownia, rowStat: ${elektrownie}">
+                <td th:text="${tempElektrownia.id}"></td>
+                <td th:text="${tempElektrownia.nazwaElektrowni}"></td>
+                <td>
+                    <span th:if="${!tempElektrownia.zdarzenia.isEmpty()}"
+                          th:utext="'PIERWOTA:'+${tempElektrownia.mocElektrowni}+'<br/>AKTUALNA:'+${tempElektrownia.getMocPoAwarii()}"></span>
+                    <span th:if="${tempElektrownia.zdarzenia.isEmpty()}"
+                          th:text="${tempElektrownia.mocElektrowni}"></span>
+                </td>
+                <td>
+                    <span th:if="${!tempElektrownia.zdarzenia.isEmpty()}"
+                          th:utext="'TAK <br/>ILOŚĆ: '+${tempElektrownia.zdarzenia.size()}"></span>
+                    <span th:if="${tempElektrownia.zdarzenia.isEmpty()}">NIE</span>
+                </td>
+                <td sec:authorize="hasRole('ADMIN')" th:width="150px">
+                    <div class="btn-group">
+                        <a th:href="@{/web/elektrownie/deleteElektrownie/{elektrowniaId}(elektrowniaId=${tempElektrownia.id})}"
+                           class="btn btn-danger mx-auto d-block">USUŃ</a>
+                        <a th:href="@{/web/elektrownie/showElektrownieUpdate(elektrowniaId=${tempElektrownia.id})}"
+                           class="btn btn-info mx-auto d-block">EDYTUJ</a>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+        <a class="btn btn-success" sec:authorize="isAuthenticated()" th:href="@{/web/elektrownie/showElektrownieAdd}">Dodaj
+            nową</a>
+
+    </div>
+</div>
+
+
+</body>
+</html>
+
