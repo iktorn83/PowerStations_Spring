@@ -9,12 +9,12 @@ about power plants and the other as a credentials database. Spring Security vers
 data security.
 
 # Screenshots
-No user authenticated<br>
-<img src="/screenshots/1.png"  width="800" height="350"><br>  
-Normal user logged<br>
-<img src="/screenshots/2.png"  width="800" height="350"><br>  
-Superuser loggedr<br>
-<img src="/screenshots/3.png"  width="800" height="350"><br>
+No user authenticated<br><br>
+<img src="/screenshots/1.png"  width="800" height="300"><br>  
+Normal user logged<br><br>
+<img src="/screenshots/2.png"  width="800" height="300"><br>  
+Superuser loggedr<br><br>
+<img src="/screenshots/3.png"  width="800" height="300"><br>
 -
 # DONE
 -REST API<br>
@@ -34,6 +34,6 @@ Superuser loggedr<br>
 -Thymeleaf<br>
 -Spring Security<br>
 -HSQL<br>
--Junit
--Spring MockMvc
--Mockito
+-Junit<br>
+-Spring MockMvc<br>
+-Mockito<br>
