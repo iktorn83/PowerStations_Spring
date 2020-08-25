@@ -10,12 +10,12 @@ data security.
 
 # Screenshots
 No user authenticated<br>
-<img src="/screenshots/1.png"  width="800" height="450"><br>  
+<img src="/screenshots/1.png"  width="800" height="400"><br>  
 Normal user logged<br>
-<img src="/screenshots/2.png"  width="800" height="450"><br>  
+<img src="/screenshots/2.png"  width="800" height="400"><br>  
 Superuser loggedr<br>
-<img src="/screenshots/3.png"  width="800" height="450"><br>
-
+<img src="/screenshots/3.png"  width="800" height="400"><br>
+-
 # DONE
 -REST API<br>
 -WEB Controller<br>
@@ -34,4 +34,6 @@ Superuser loggedr<br>
 -Thymeleaf<br>
 -Spring Security<br>
 -HSQL<br>
--
+-Junit
+-Spring MockMvc
+-Mockito
